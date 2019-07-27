@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'x33725owe3s%!o$qt2-v_f^*dz5rb!(rx&1167c@!zsafco7f$'
+SECRET_KEY = 'pifdc8^u1o75pnb%9ntp7jhd@584)1xs7i3$_i+98ib!gql-__'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -34,12 +34,14 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.staticfiles',
+    'user.apps.UserConfig',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
+    'common.middleware.AuthMiddleware',
 ]
 
 ROOT_URLCONF = 'swiper.urls'
@@ -70,11 +72,6 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-
-
-# Password validation
-# https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
-
 
 
 # Internationalization
